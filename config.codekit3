@@ -43,12 +43,30 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/build\/.htaccess",
-		"oF": 2
+		"oF": 0
 		},
-	"\/app\/404.html": {
+	"\/app\/_404.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/build\/404.html",
+		"oF": 3
+		},
+	"\/app\/_critical\/404.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/404.html",
+		"oF": 2
+		},
+	"\/app\/_critical\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/index.html",
+		"oF": 2
+		},
+	"\/app\/_index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/index.html",
 		"oF": 3
 		},
 	"\/app\/_license\/LICENSE-H5BP.txt": {
@@ -83,7 +101,7 @@
 	"\/app\/css\/.sass-cache": {
 		"ft": 65536,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/.sass-cache",
+		"oAP": "\/build\/css\/.sass-cache",
 		"oF": 0
 		},
 	"\/app\/css\/base\/_extends.scss": {
@@ -94,7 +112,20 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_extends-min.css",
+		"oAP": "\/build\/css\/css\/_extends-min.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/app\/css\/base\/_global.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/css\/css\/_global-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -107,7 +138,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_h5bp-helper-min.css",
+		"oAP": "\/build\/css\/css\/_h5bp-helper-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -120,7 +151,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_h5bp-top-min.css",
+		"oAP": "\/build\/css\/css\/_h5bp-top-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -133,7 +164,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_mixins-min.css",
+		"oAP": "\/build\/css\/css\/_mixins-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -146,7 +177,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_normalize-min.css",
+		"oAP": "\/build\/css\/css\/_normalize-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -159,7 +190,20 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_variables-min.css",
+		"oAP": "\/build\/css\/css\/_variables-min.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/app\/css\/layout\/_global.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/css\/css\/_global-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -172,7 +216,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_grid-min.css",
+		"oAP": "\/build\/css\/css\/_grid-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -198,7 +242,20 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_footer-min.css",
+		"oAP": "\/build\/css\/css\/_footer-min.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/app\/css\/modules\/_global.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/css\/css\/_global-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -211,7 +268,7 @@
 		"ft": 4,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/css\/css\/_header-min.css",
+		"oAP": "\/build\/css\/css\/_header-min.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -228,11 +285,25 @@
 		"oAP": "\/build\/humans.txt",
 		"oF": 2
 		},
-	"\/app\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/build\/index.html",
-		"oF": 3
+	"\/app\/img\/personalSiteBg.png": {
+		"ft": 32768,
+		"iS": 322256,
+		"oA": 0,
+		"oAP": "\/build\/img\/personalSiteBg.png",
+		"oF": 2,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/app\/js\/chart-config.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/build\/js\/chart-config-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"\/app\/js\/main.js": {
 		"ft": 64,
@@ -247,15 +318,33 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/app\/js\/plugins-min.js",
+		"oAP": "\/build\/js\/plugins-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
 		},
+	"\/app\/js\/vendor\/Chart.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/build\/js\/js\/Chart.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/app\/js\/vendor\/chartjs-plugin-deferred.min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/build\/js\/js\/chartjs-plugin-deferred.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/app\/js\/vendor\/jquery-1.12.0.min.js": {
 		"ft": 64,
-		"mi": 1,
-		"oA": 2,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "\/build\/js\/vendor\/jquery-1.12.0.min.js",
 		"oF": 3,
 		"sC": 0,
@@ -263,8 +352,8 @@
 		},
 	"\/app\/js\/vendor\/modernizr-2.8.3.min.js": {
 		"ft": 64,
-		"mi": 1,
-		"oA": 2,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "\/build\/js\/vendor\/modernizr-2.8.3.min.js",
 		"oF": 3,
 		"sC": 0,
@@ -357,9 +446,27 @@
 "manualImportLinks": {
 	"\/app\/js\/main.js": [
 		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/app\/js\/vendor\/Chart.min.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/app\/js\/vendor\/chartjs-plugin-deferred.min.js",
+			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/app\/js\/chart-config.js",
+			"position": 2,
+			"type": 0
+			},
+		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/app\/js\/plugins.js",
-			"position": 0,
+			"position": 3,
 			"type": 0
 			}
 		]
@@ -369,13 +476,13 @@
 	"displayValue": "personalsite",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-obama",
-	"lastBuiltDate": 515042205
+	"lastBuiltDate": 515114293
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
-	"autoBuildNewItems": 1,
+	"autoBuildNewItems": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
@@ -767,7 +874,7 @@
 		},
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
-	"esLintEnvironmentsMask": 1,
+	"esLintEnvironmentsMask": 8193,
 	"esLintRules": {
 		"accessor-pairs": {
 			"active": 0,
@@ -2305,9 +2412,9 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
-	"previewPathAddition": "\/dist",
+	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, _assets, _doc, build, \/app\/css\/.sass-cache",
-	"sourceFolderName": "dev",
+	"sourceFolderName": "app",
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {

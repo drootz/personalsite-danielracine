@@ -85,7 +85,8 @@
 # Customize what Apache returns to the client in case of an error.
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.html
+# ErrorDocument 404 http://www.lemarchanddefenetres.ca/404.php
+# ErrorDocument 403 http://www.lemarchanddefenetres.ca/403.php
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -229,6 +230,7 @@ Options -MultiViews
 
   # Other
 
+    AddType application/x-httpd-php70                   .php
     AddType application/octet-stream                    safariextz
     AddType application/x-bb-appworld                   bbaw
     AddType application/x-chrome-extension              crx
@@ -340,6 +342,18 @@ AddDefaultCharset utf-8
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ - [env=proto:http]
 
+    RewriteCond %{HTTP_HOST} ^lemarchanddefenetres\.oneprojct\.space$ [OR]
+    RewriteCond %{HTTP_HOST} ^www\.lemarchanddefenetres\.oneprojct\.space$
+    RewriteRule ^/?$ "http\:\/\/www\.lemarchanddefenetres\.oneprojct\.space\/public\/" [R=301,L]
+
+    RewriteCond %{HTTP_HOST} ^lemarchanddefenetres\.com$ [OR]
+    RewriteCond %{HTTP_HOST} ^www\.lemarchanddefenetres\.com$
+    RewriteRule ^/?$ "http\:\/\/www\.lemarchanddefenetres\.ca" [R=301,L]
+
+    RewriteCond %{HTTP_HOST} ^lemarchanddefenetres\.ca$ [OR]
+    RewriteCond %{HTTP_HOST} ^www\.lemarchanddefenetres\.ca$
+    RewriteRule ^/?$ "http\:\/\/www\.lemarchanddefenetres\.ca\/public\/" [R=301,L]
+
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -377,12 +391,12 @@ AddDefaultCharset utf-8
 
 # Option 1: rewrite www.example.com → example.com
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
-</IfModule>
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} !=on
+#     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#     RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+# </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -391,14 +405,19 @@ AddDefaultCharset utf-8
 # Be aware that the following might not be a good idea if you use "real"
 # subdomains for certain parts of your website.
 
-# <IfModule mod_rewrite.c>
+<IfModule mod_rewrite.c>
 #     RewriteEngine On
 #     RewriteCond %{HTTPS} !=on
 #     RewriteCond %{HTTP_HOST} !^www\. [NC]
 #     RewriteCond %{SERVER_ADDR} !=127.0.0.1
 #     RewriteCond %{SERVER_ADDR} !=::1
 #     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-# </IfModule>
+
+	  RewriteEngine on
+	  RewriteCond %{HTTP_HOST} ^fenplastsite.oneprojct.space$
+	  RewriteRule ^/?$ "http\:\/\/www\.fenplastsite\.oneprojct\.space\/" [R=301,L]
+
+</IfModule>
 
 
 # ######################################################################
@@ -716,6 +735,8 @@ ServerSignature Off
 
 <IfModule mod_deflate.c>
 
+    AddOutputFilterByType DEFLATE application/x-javascript application/javascript text/javascript text/css text/html text/xml
+
     # Force compression for mangled `Accept-Encoding` request headers
     # https://developer.yahoo.com/blogs/ydn/pushing-beyond-gzipping-25601.html
 
@@ -725,6 +746,17 @@ ServerSignature Off
             RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
         </IfModule>
     </IfModule>
+
+    <ifModule mod_gzip.c>
+      mod_gzip_on Yes
+      mod_gzip_dechunk Yes
+      mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+      mod_gzip_item_include handler ^cgi-script$
+      mod_gzip_item_include mime ^text/.*
+      mod_gzip_item_include mime ^application/x-javascript.*
+      mod_gzip_item_exclude mime ^image/.*
+      mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+    </ifModule>
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -847,11 +879,11 @@ FileETag None
 <IfModule mod_expires.c>
 
     ExpiresActive on
-    ExpiresDefault                                      "access plus 1 month"
+    ExpiresDefault                                      "access plus 1 week"
 
   # CSS
 
-    ExpiresByType text/css                              "access plus 1 year"
+    ExpiresByType text/css                              "access plus 0 seconds"
 
 
   # Data interchange
@@ -880,9 +912,9 @@ FileETag None
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 year"
-    ExpiresByType application/x-javascript              "access plus 1 year"
-    ExpiresByType text/javascript                       "access plus 1 year"
+    ExpiresByType application/javascript                "access plus 0 seconds"
+    ExpiresByType application/x-javascript              "access plus 0 seconds"
+    ExpiresByType text/javascript                       "access plus 0 seconds"
 
 
   # Manifest files

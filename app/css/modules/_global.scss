@@ -1,0 +1,87 @@
+.m-roles-list {
+    font-weight: 900;
+    letter-spacing: -.025em;
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 20px;
+    @media only screen and (min-width: 450px) {
+        list-style-type: disc;
+        padding-left: 40px;
+    }
+}
+
+.m-role-0 {
+    color: $color-fg;
+}
+
+.m-role-1 {
+    color: rgba(255, 204, 102, 1);
+}
+
+.m-role-2 {
+    color: rgba(102, 153, 204, 1);
+}
+
+.m-role-3 {
+    color: rgba(242, 119, 122, 1);
+}
+
+.flex-row {
+    margin: auto;
+    width: 100%;
+    max-width: 1260px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media only screen and (min-width: 1275px) {
+        justify-content: space-between;
+    }
+    @media only screen and (min-width: 1700px) {
+        max-width: 1680px;
+    }
+}
+
+.m-chart {
+    font-family: 'Lato', sans-serif;
+    box-shadow: -1px 1px 5px rgba(0,0,0,0.6);
+    margin: 20px 10px 0;
+    background: lighten($color-bg, 2%);
+    background: transparentize(lighten($color-bg, 2%),0.2);
+
+    h3 {
+        text-align: center;
+        font-size: 1.6em;
+        letter-spacing: -0.04em;
+        margin: -10px 0 40px;
+        @media only screen and (min-width: 450px) {
+            font-size: 2em;
+            margin: -40px 0 40px;
+        }
+    }
+}
+
+.chart-wrapper-outter {
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    @media only screen and (min-width: 380px) {
+        width: 350px;
+        height: 350px;
+    }
+    @media only screen and (min-width: 450px) {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.chart-wrapper-inner {
+    margin: auto;
+    width: 250px;
+    @media only screen and (min-width: 380px) {
+        width: 265px;
+    }
+    @media only screen and (min-width: 450px) {
+        width: 275px;
+    }
+}

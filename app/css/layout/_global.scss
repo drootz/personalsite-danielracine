@@ -1,0 +1,58 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga" on;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: $color-bg;
+    color: $color-fg;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+a {
+    color: $color-fg;
+    text-decoration: none;
+
+    &:hover {
+        color: #2196f3;
+        text-decoration: underline;
+    }
+}
+
+.page-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-image: url("../img/personalSiteBg.png");
+    background-size: 500px 500px;
+}
+
+.m-wrapper {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 1260px;
+    margin: auto;
+    @media only screen and (min-width: 600px) and (max-width: 1260px) {
+        max-width: 840px;
+        margin: auto;
+    }
+    @media only screen and (min-width: 1700px) {
+        max-width: 1680px;
+        margin: auto;
+    }
+}
+
+.m-header {
+  padding: 50px 0 20px;
+}
